@@ -1,0 +1,30 @@
+{
+    "version": "1.7.15",
+    "license": "Freeware",
+    "description": "Puts a Monitor Brightness icon to on Taskbar Tray",
+    "homepage": "https://github.com/blackholeearth/Win10_BrightnessSlider",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/blackholeearth/Win10_BrightnessSlider/releases/download/v1.7.15/Win10_BrightnessSlider.exe",
+            "hash": "55E4A4B53D6D34E19EB86BA27495B48339B57B573AEF79682DF86E3F72063C4D"
+        }
+    },
+    "extract_dir": "Win10_BrightnessSlider",
+    "bin": "Win10_BrightnessSlider.exe",
+    "shortcuts": [["Win10_BrightnessSlider.exe", "Win10_BrightnessSlider"]],
+    "checkver": {
+        "github": "https://github.com/blackholeearth/Win10_BrightnessSlider",
+        "regex": "v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/blackholeearth/Win10_BrightnessSlider/releases/download/$version/Win10_BrightnessSlider.exe"
+            }
+        },
+        "hash": {
+            "url": "https://github.com/blackholeearth/Win10_BrightnessSlider/releases/tag/$version",
+            "regex": "$sha256\\s*\\./$basename"
+        }
+    }
+}
