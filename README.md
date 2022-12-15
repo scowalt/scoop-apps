@@ -8,8 +8,12 @@ My bucket for [Scoop](https://scoop.sh), the Windows command-line installer.
 
 To add this bucket, run:
 
-`scoop bucket add scowalt_scoop-apps https://github.com/scowalt/scoop-apps`
+```
+scoop bucket add scowalt_scoop-apps https://github.com/scowalt/scoop-apps
+```
 
 To install, do
 
-`scoop install <manifest>`.
+```
+scoop install <manifest>
+```
