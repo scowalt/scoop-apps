@@ -6,4 +6,10 @@ My bucket for [Scoop](https://scoop.sh), the Windows command-line installer.
 
 ## How do I install these manifests?
 
-To add this bucket, run `scoop bucket add scowalt/scoop-apps https://github.com/scowalt/scoop-apps`. To install, do `scoop install <manifest>`.
+To add this bucket, run:
+
+`scoop bucket add scowalt_scoop-apps https://github.com/scowalt/scoop-apps`
+
+To install, do
+
+`scoop install <manifest>`.
