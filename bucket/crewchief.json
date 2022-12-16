@@ -1,0 +1,26 @@
+{
+    "version": "4.16.3.4",
+    "license": "MIT",
+    "description": "Crew Chief is a team radio engineer, originally developed by Mr Belowski. It also has a spotter with a choice of voices.",
+    "homepage": "https://thecrewchief.org/",
+    "architecture": {
+        "64bit": {
+            "url": "https://thecrewchief.org/downloads/CrewChiefV4.msi",
+            "hash": "F649EF568F9BBB4C8A1C367C223062F278B40D3FC9BF2F589112763F647DE8FE"
+        }
+    },
+    "extract_dir": "Britton IT Ltd/CrewChiefV4",
+    "bin": "CrewChiefV4.exe",
+    "shortcuts": [["CrewChiefV4.exe", "CrewChiefV4"]],
+    "checkver": {
+        "url": "https://thecrewchief.org/downloads/change_log_for_auto_updated.html",
+        "regex": "Version ([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://thecrewchief.org/downloads/CrewChiefV4.msi"
+            }
+        }
+    }
+}

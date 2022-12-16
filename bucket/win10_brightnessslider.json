@@ -21,10 +21,6 @@
             "64bit": {
                 "url": "https://github.com/blackholeearth/Win10_BrightnessSlider/releases/download/$version/Win10_BrightnessSlider.exe"
             }
-        },
-        "hash": {
-            "url": "https://github.com/blackholeearth/Win10_BrightnessSlider/releases/tag/$version",
-            "regex": "$sha256\\s*\\./$basename"
         }
     }
 }
