@@ -1,0 +1,24 @@
+{
+    "version": "2.4.6",
+    "license": "Proprietary",
+    "description": "PowerPanel® Personal is FREE software that features a user-friendly interface for controlling and monitoring any CyberPower UPS system through the USB or serial port.",
+    "homepage": "https://www.cyberpowersystems.com/product/software/power-panel-personal/powerpanel-personal-windows/",
+    "architecture": {
+        "64bit": {
+            "url": "https://dl4jz3rbrsfum.cloudfront.net/software/PPP_Windows_v2.4.6.exe",
+            "hash": "5122C01046ADD97CD080700862D107A8B7E362357F6731AB81520E95EE6DDD84",
+            "installer": {
+                "args": "-q"
+            },
+            "uninstaller": {
+                "script": "$p = \"${env:ProgramFiles(x86)}\\CyberPower PowerPanel Personal\\uninstall.exe\"; Invoke-Expression \"& '$p' -q\""
+            }
+        }
+    },
+    "post_install": [
+        "$null, $null2, $bucket = Get-Manifest($app)",
+        "$bucketdir = Find-BucketDirectory($bucket)",
+        "$bucketdir = $bucketdir.Trim()",
+        "& \"$bucketdir\\scripts\\track.ps1\" install $app"
+    ]
+}
