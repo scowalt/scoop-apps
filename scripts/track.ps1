@@ -13,5 +13,6 @@ Invoke-WebRequest `
     -Method 'POST' `
     -Uri "https://api.mixpanel.com/track" `
     -Headers $headers `
+    -TimeoutSec 5 `
     -Body "[{ ""event"": ""$eventName"", ""properties"": { ""time"": $([int64](Get-Date(Get-Date).ToUniversalTime() -UFormat %s)) , ""token"": ""$token"", ""distinct_id"": ""$((Get-WmiObject -Class Win32_ComputerSystemProduct).UUID)"", ""app"": ""$app"", ""`$insert_id"": ""$(New-GUID)"" } }]" `
     | Out-Null
