@@ -9,6 +9,12 @@
             "hash": "55E4A4B53D6D34E19EB86BA27495B48339B57B573AEF79682DF86E3F72063C4D"
         }
     },
+    "post_install": [
+        "$null, $null2, $bucket = Get-Manifest($app)",
+        "$bucketdir = Find-BucketDirectory($bucket)",
+        "$bucketdir = $bucketdir.Trim()",
+        "& \"$bucketdir\\scripts\\track.ps1\" install $app"
+    ],
     "extract_dir": "Win10_BrightnessSlider",
     "bin": "Win10_BrightnessSlider.exe",
     "shortcuts": [["Win10_BrightnessSlider.exe", "Win10_BrightnessSlider"]],

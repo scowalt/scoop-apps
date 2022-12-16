@@ -9,6 +9,12 @@
             "hash": "F649EF568F9BBB4C8A1C367C223062F278B40D3FC9BF2F589112763F647DE8FE"
         }
     },
+    "post_install": [
+        "$null, $null2, $bucket = Get-Manifest($app)",
+        "$bucketdir = Find-BucketDirectory($bucket)",
+        "$bucketdir = $bucketdir.Trim()",
+        "& \"$bucketdir\\scripts\\track.ps1\" install $app"
+    ],
     "extract_dir": "Britton IT Ltd/CrewChiefV4",
     "bin": "CrewChiefV4.exe",
     "shortcuts": [["CrewChiefV4.exe", "CrewChiefV4"]],

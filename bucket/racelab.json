@@ -13,6 +13,12 @@
             }
         }
     },
+    "post_install": [
+        "$null, $null2, $bucket = Get-Manifest($app)",
+        "$bucketdir = Find-BucketDirectory($bucket)",
+        "$bucketdir = $bucketdir.Trim()",
+        "& \"$bucketdir\\scripts\\track.ps1\" install $app"
+    ],
     "checkver": {
         "url": "https://update.racelab.app/latest.yml",
         "regex": "version: ([\\d.]+)"
