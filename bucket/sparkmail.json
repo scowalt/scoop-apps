@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://downloads.sparkmailapp.com/Spark3/win/dist/3.2.2.40861/Spark.exe",
-            "hash": "9ED923278F36EB5D0599EC11C2A7458035222DF533ECBD6D2B90FBF76CB2A1C2",
+            "hash": "9ed923278f36eb5d0599ec11c2a7458035222df533ecbd6d2b90fbf76cb2a1c2",
             "installer": {
                 "args": [
                     "/s",
@@ -29,6 +29,12 @@
         "$bucketdir = Find-BucketDirectory($bucket)",
         "$bucketdir = $bucketdir.Trim()",
         "& \"$bucketdir\\scripts\\track.ps1\" install $app"
+    ],
+    "post_uninstall": [
+        "$null, $null2, $bucket = Get-Manifest($app)",
+        "$bucketdir = Find-BucketDirectory($bucket)",
+        "$bucketdir = $bucketdir.Trim()",
+        "& \"$bucketdir\\scripts\\track.ps1\" uninstall $app"
     ],
     "checkver": {
         "url": "https://downloads.sparkmailapp.com/Spark3/win/dist/appcast.xml",

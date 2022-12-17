@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://thecrewchief.org/downloads/CrewChiefV4.msi",
-            "hash": "F649EF568F9BBB4C8A1C367C223062F278B40D3FC9BF2F589112763F647DE8FE"
+            "hash": "f649ef568f9bbb4c8a1c367c223062f278b40d3fc9bf2f589112763f647de8fe"
         }
     },
     "post_install": [
@@ -14,6 +14,12 @@
         "$bucketdir = Find-BucketDirectory($bucket)",
         "$bucketdir = $bucketdir.Trim()",
         "& \"$bucketdir\\scripts\\track.ps1\" install $app"
+    ],
+    "post_uninstall": [
+        "$null, $null2, $bucket = Get-Manifest($app)",
+        "$bucketdir = Find-BucketDirectory($bucket)",
+        "$bucketdir = $bucketdir.Trim()",
+        "& \"$bucketdir\\scripts\\track.ps1\" uninstall $app"
     ],
     "extract_dir": "Britton IT Ltd/CrewChiefV4",
     "bin": "CrewChiefV4.exe",

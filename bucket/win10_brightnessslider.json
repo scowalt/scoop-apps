@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/blackholeearth/Win10_BrightnessSlider/releases/download/v1.7.15/Win10_BrightnessSlider.exe",
-            "hash": "55E4A4B53D6D34E19EB86BA27495B48339B57B573AEF79682DF86E3F72063C4D"
+            "hash": "55e4a4b53d6d34e19eb86ba27495b48339b57b573aef79682df86e3f72063c4d"
         }
     },
     "post_install": [
@@ -14,6 +14,12 @@
         "$bucketdir = Find-BucketDirectory($bucket)",
         "$bucketdir = $bucketdir.Trim()",
         "& \"$bucketdir\\scripts\\track.ps1\" install $app"
+    ],
+    "post_uninstall": [
+        "$null, $null2, $bucket = Get-Manifest($app)",
+        "$bucketdir = Find-BucketDirectory($bucket)",
+        "$bucketdir = $bucketdir.Trim()",
+        "& \"$bucketdir\\scripts\\track.ps1\" uninstall $app"
     ],
     "extract_dir": "Win10_BrightnessSlider",
     "bin": "Win10_BrightnessSlider.exe",
@@ -25,7 +31,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/blackholeearth/Win10_BrightnessSlider/releases/download/$version/Win10_BrightnessSlider.exe"
+                "url": "https://github.com/blackholeearth/Win10_BrightnessSlider/releases/download/v$version/Win10_BrightnessSlider.exe"
             }
         }
     }
