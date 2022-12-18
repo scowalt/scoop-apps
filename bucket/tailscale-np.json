@@ -1,0 +1,41 @@
+{
+    "version": "1.34.1",
+    "license": "https://tailscale.com/terms/",
+    "description": "Tailscale is a zero config VPN for building secure networks. Install on any device in minutes. Remote access from any network or physical location.",
+    "homepage": "https://tailscale.com",
+    "architecture": {
+        "64bit": {
+            "url": "https://pkgs.tailscale.com/stable/tailscale-ipn-setup-1.34.1.exe",
+            "hash": "302b5ef05ad97d39c81624d77882b67adfef2e68da4c9e2a9ebbf5667c29a3b0",
+            "installer": {
+                "script": "Start-Process $dir\\$fname -ArgumentList \"/S\" -wait; Remove-Item $dir\\$fname"
+            },
+            "uninstaller": {
+                "script": "$p = \"${env:ProgramFiles(x86)}\\Tailscale IPN\\Uninstall-Tailscale.exe\"; Invoke-Expression \"& '$p' /S\""
+            }
+        }
+    },
+    "post_install": [
+        "$null, $null2, $bucket = Get-Manifest($app)",
+        "$bucketdir = Find-BucketDirectory($bucket)",
+        "$bucketdir = $bucketdir.Trim()",
+        "& \"$bucketdir\\scripts\\track.ps1\" install $app"
+    ],
+    "post_uninstall": [
+        "$null, $null2, $bucket = Get-Manifest($app)",
+        "$bucketdir = Find-BucketDirectory($bucket)",
+        "$bucketdir = $bucketdir.Trim()",
+        "& \"$bucketdir\\scripts\\track.ps1\" uninstall $app"
+    ],
+    "checkver": {
+        "url": "https://pkgs.tailscale.com/stable/",
+        "regex": "\"tailscale-ipn-setup-([\\d.]+).exe\""
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://pkgs.tailscale.com/stable/tailscale-ipn-setup-$version.exe"
+            }
+        }
+    }
+}
