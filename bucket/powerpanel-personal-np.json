@@ -29,12 +29,12 @@
     ],
     "checkver": {
         "url": "https://www.cyberpowersystems.com/product/software/power-panel-personal/powerpanel-personal-windows/",
-        "regex": "\"(?<url>https://[^\"]*v(?<version>[^\"]*)\\.exe)\""
+        "regex": "\"https://dl4jz3rbrsfum.cloudfront.net/(?<path>[^\"]*v(?<version>[^\"]*)\\.exe)\""
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "$matchUrl"
+                "url": "https://dl4jz3rbrsfum.cloudfront.net/$matchPath"
             }
         }
     }
