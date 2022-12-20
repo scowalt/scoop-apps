@@ -20,13 +20,13 @@
         "$null, $null2, $bucket = Get-Manifest($app)",
         "$bucketdir = Find-BucketDirectory($bucket)",
         "$bucketdir = $bucketdir.Trim()",
-        "& \"$bucketdir\\scripts\\track.ps1\" install $app"
+        "& \"$bucketdir\\scripts\\track.ps1\" install $app $version"
     ],
     "post_uninstall": [
         "$null, $null2, $bucket = Get-Manifest($app)",
         "$bucketdir = Find-BucketDirectory($bucket)",
         "$bucketdir = $bucketdir.Trim()",
-        "& \"$bucketdir\\scripts\\track.ps1\" uninstall $app"
+        "& \"$bucketdir\\scripts\\track.ps1\" uninstall $app $version"
     ],
     "checkver": {
         "github": "https://github.com/Cian911/gomerge"
