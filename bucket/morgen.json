@@ -1,12 +1,12 @@
 {
-    "version": "2.6.4",
+    "version": "2.6.5",
     "license": "Proprietary",
     "description": "Consolidate calendars, schedule meetings, and block time for work that matters.",
     "homepage": "https://www.morgen.so/",
     "architecture": {
         "64bit": {
-            "url": "https://download.todesktop.com/210203cqcj00tw1/Morgen%20Setup%202.6.4-x64.exe",
-            "hash": "04b528dd60a5c625785079f3784a0deee6072e7e672a0537c9db4526c70c92f8",
+            "url": "https://download.todesktop.com/210203cqcj00tw1/Morgen%20Setup%202.6.5-x64.exe",
+            "hash": "e1edceee94cc593932517369ad7989b1802921bef3026a7553f443b5644a865f",
             "installer": {
                 "script": "Start-Process $dir\\$fname -ArgumentList \"/S\" -wait; Remove-Item $dir\\$fname"
             },
