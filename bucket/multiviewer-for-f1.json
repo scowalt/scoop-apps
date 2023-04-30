@@ -1,0 +1,16 @@
+{
+    "version": "1.15.3",
+    "license": "Proprietary",
+    "description": "Unofficial desktop client for F1TV",
+    "homepage": "https://multiviewer.app/",
+    "url": "https://releases.multiviewer.app/download/106028238/MultiViewer.for.F1-win32-x64-1.15.3.zip",
+    "hash": "541b04a24085654fc1778fa8cc34123fd8a23b9a00e60a0ddc9a20d0297492b4",
+    "shortcuts": [["MultiViewer for F1.exe", "MultiViewer for F1"]],
+    "checkver": {
+        "url": "https://multiviewer.app/download",
+        "regex": "\"https://releases.multiviewer.app/(?<path>download/\\d+/MultiViewer\\.for\\.F1-win32-x64-(?<version>[^\"]*)\\.zip)\""
+    },
+    "autoupdate": {
+        "url": "https://releases.multiviewer.app/$matchPath"
+    }
+}
